@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("onboarding") var isOnboardingActive = true
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            if isOnboardingActive {
+                OnboardingView()
+            } else {
+                HomeView()
+            }
+            
         }
         .padding()
     }
