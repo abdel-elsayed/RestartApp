@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct CustomDraggableButton: View {
-    @AppStorage("onboarding") var isOnboardingActive = true
-
+    let completion: () -> Void
     @State var buttonWidth: Double = UIScreen.main.bounds.width - 80
     @State var buttonOffset: CGFloat = 0
     @State var text: String
@@ -45,7 +44,7 @@ struct CustomDraggableButton: View {
                     .onEnded({ _ in
                         if buttonOffset > buttonWidth / 2 {
                             buttonOffset = buttonWidth - 80
-                            isOnboardingActive = false
+                            completion()
                         } else {
                             buttonOffset = 0
                         }
@@ -92,7 +91,9 @@ struct CustomDraggableButton_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color(.black)
-            CustomDraggableButton(text: "Get Started", color: Color("ColorRed"))
+            CustomDraggableButton(completion: {},
+                                  text: "Get Started",
+                                  color: Color("ColorRed"))
             }
     }
 }

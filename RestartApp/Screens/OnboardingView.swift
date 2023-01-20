@@ -32,7 +32,7 @@ struct OnboardingView: View {
                     .font(.title3)
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
-                .padding(.horizontal, 10)
+                    .padding(.horizontal, 10)
                 }
                 .offset(y: isAnimating ? 0 : -40)
                 .opacity(isAnimating ? 1 : 0)
@@ -51,8 +51,13 @@ struct OnboardingView: View {
                 }
                 Spacer()
                 //MARK: - Footer
-              CustomDraggableButton(text: "Get Started",
-                                    color: Color("ColorRed"))
+                CustomDraggableButton(completion: {
+                    withAnimation(Animation.easeOut(duration: 0.4)) {
+                        isOnboardingActive = false
+                    }
+                },
+                                      text: "Get Started",
+                                      color: Color("ColorRed"))
             }
         }
     }
