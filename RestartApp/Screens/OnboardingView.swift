@@ -10,10 +10,12 @@ import SwiftUI
 struct OnboardingView: View {
     @AppStorage("onboarding") var isOnboardingActive = true
     
+    
     var body: some View {
         ZStack {
             Color("ColorBlue")
-                .ignoresSafeArea()
+                .ignoresSafeArea(.all, edges: .all)
+            
             VStack(spacing: 20) {
                 Spacer()
                 //MARK: - Header
@@ -43,43 +45,8 @@ struct OnboardingView: View {
                 }
                 Spacer()
                 //MARK: - Footer
-                ZStack {
-                    Capsule()
-                        .fill(.white.opacity(0.2))
-                    Capsule()
-                        .fill(.white.opacity(0.2))
-                        .padding(8)
-                    
-                    Text("Get Started")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                    
-                    HStack {
-                        Capsule()
-                            .fill(Color("ColorRed"))
-                        .frame(width: 80)
-                        Spacer()
-                    }
-
-                    HStack {
-                        ZStack {
-                            
-                            Circle()
-                                .fill(Color("ColorRed"))
-                            Circle()
-                                .fill(.black.opacity(0.2))
-                                .padding(8)
-                            Image(systemName: "chevron.right.2")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                        }
-                        Spacer()
-                    }
-                    
-                }.frame(height: 80, alignment: .center)
-                    .padding()
+              CustomDraggableButton(text: "Get Started",
+                                    color: Color("ColorRed"))
             }
         }
     }

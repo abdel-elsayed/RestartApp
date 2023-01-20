@@ -16,6 +16,7 @@
 		8E22C9C32978CF66009551C8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E22C9C22978CF66009551C8 /* HomeView.swift */; };
 		8E22C9C52978CF75009551C8 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E22C9C42978CF75009551C8 /* OnboardingView.swift */; };
 		8E22C9C72978F8FF009551C8 /* CircleRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E22C9C62978F8FF009551C8 /* CircleRingView.swift */; };
+		8E77E4CF297A458700A57017 /* CustomDraggableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E77E4CE297A458700A57017 /* CustomDraggableButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		8E22C9C22978CF66009551C8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8E22C9C42978CF75009551C8 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		8E22C9C62978F8FF009551C8 /* CircleRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleRingView.swift; sourceTree = "<group>"; };
+		8E77E4CE297A458700A57017 /* CustomDraggableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDraggableButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				8E22C9C62978F8FF009551C8 /* CircleRingView.swift */,
+				8E77E4CE297A458700A57017 /* CustomDraggableButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			files = (
 				8E22C9C72978F8FF009551C8 /* CircleRingView.swift in Sources */,
 				8E22C9C32978CF66009551C8 /* HomeView.swift in Sources */,
+				8E77E4CF297A458700A57017 /* CustomDraggableButton.swift in Sources */,
 				8E22C9C52978CF75009551C8 /* OnboardingView.swift in Sources */,
 				8E22C9AE2978C461009551C8 /* ContentView.swift in Sources */,
 				8E22C9AC2978C461009551C8 /* RestartAppApp.swift in Sources */,
