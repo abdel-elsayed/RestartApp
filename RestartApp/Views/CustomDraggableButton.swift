@@ -14,6 +14,7 @@ struct CustomDraggableButton: View {
     @State var buttonOffset: CGFloat = 0
     @State var text: String
     @State var color: Color
+    @State var isAnimating = false
     
     var body: some View {
         ZStack {
@@ -24,9 +25,10 @@ struct CustomDraggableButton: View {
                 .padding(8)
             
             Text(text)
-                .font(.title2)
-                .fontWeight(.bold)
+                .font(.title3)
+                .fontWeight(.semibold)
                 .foregroundColor(.white)
+                .offset(x: 20)
             
             backgroundColor
 
@@ -51,8 +53,15 @@ struct CustomDraggableButton: View {
                 )
                 Spacer()
             }
-        }.frame(width: buttonWidth, height: 80, alignment: .center)
-            .padding()
+        }
+        .offset(y: isAnimating ? 0 : 40)
+        .opacity(isAnimating ? 1 : 0)
+        .animation(.easeOut(duration: 1), value: isAnimating)
+        .onAppear {
+            isAnimating = true
+        }
+        .frame(width: buttonWidth, height: 80, alignment: .center)
+        .padding()
     }
     
     @ViewBuilder var backgroundColor: some View {

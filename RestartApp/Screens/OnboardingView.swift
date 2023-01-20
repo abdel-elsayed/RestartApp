@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OnboardingView: View {
     @AppStorage("onboarding") var isOnboardingActive = true
-    
+    @State var isAnimating = false
     
     var body: some View {
         ZStack {
@@ -33,6 +33,12 @@ struct OnboardingView: View {
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
                 .padding(.horizontal, 10)
+                }
+                .offset(y: isAnimating ? 0 : -40)
+                .opacity(isAnimating ? 1 : 0)
+                .animation(.easeOut(duration: 1), value: isAnimating)
+                .onAppear {
+                    isAnimating = true
                 }
                 //MARK: - Center
                 ZStack {
