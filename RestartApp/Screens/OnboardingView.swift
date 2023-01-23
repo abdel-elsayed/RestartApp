@@ -41,25 +41,22 @@ struct OnboardingView: View {
                     isAnimating = true
                 }
                 //MARK: - Center
-                ZStack {
-                    CircleRingView(shapeColor: .white,
-                                   shapeOpacity: 0.2)
-                    
-                    Image("character-1")
-                        .resizable()
-                        .scaledToFit()
-                }
+                CenterDraggableImage(image: Image("character-1"))
+                
                 Spacer()
                 //MARK: - Footer
                 CustomDraggableButton(completion: {
-                    withAnimation(Animation.easeOut(duration: 0.4)) {
-                        isOnboardingActive = false
+                    DispatchQueue.main.async {
+                        withAnimation(Animation.easeOut(duration: 0.4)) {
+                            isOnboardingActive = false
+                        }
                     }
                 },
                                       text: "Get Started",
                                       color: Color("ColorRed"))
             }
         }
+        .preferredColorScheme(.dark)
     }
 }
 
